@@ -14,7 +14,7 @@
             </td>
             <td><span class="badge">{{ $sku->countInOrder }}</span>
                 <div class="btn-group form-inline">
-                    {!! $sku->product->__('description') !!}
+                    {!! $sku->product !!}
                 </div>
             </td>
             <td>{{ $sku->price }} €.</td>

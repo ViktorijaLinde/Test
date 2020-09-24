@@ -1,10 +1,10 @@
 @extends('auth.layouts.master')
 
-@section('title', 'Купоны')
+@section('title')@lang('auth.coupons')@endsection
 
 @section('content')
     <div class="col-md-12">
-        <h1>Купоны</h1>
+        <h1>@lang('auth.coupons')</h1>
         <table class="table">
             <tbody>
             <tr>
@@ -12,13 +12,13 @@
                     #
                 </th>
                 <th>
-                    Код
+                    @lang('auth.code)
                 </th>
                 <th>
-                    Описание
+                    @lang('auth.descript)
                 </th>
                 <th>
-                    Действия
+                    Actions
                 </th>
             </tr>
             @foreach($coupons as $coupon)
@@ -30,12 +30,12 @@
                         <div class="btn-group" role="group">
                             <form action="{{ route('coupons.destroy', $coupon) }}" method="POST">
                                 <a class="btn btn-success" type="button"
-                                   href="{{ route('coupons.show', $coupon) }}">Открыть</a>
+                                   href="{{ route('coupons.show', $coupon) }}">@lang('auth.open)</a>
                                 <a class="btn btn-warning" type="button"
-                                   href="{{ route('coupons.edit', $coupon) }}">Редактировать</a>
+                                   href="{{ route('coupons.@lang('auth.edit)', $coupon) }}">@lang('auth.edit)</a>
                                 @csrf
                                 @method('DELETE')
-                                <input class="btn btn-danger" type="submit" value="Удалить"></form>
+                                <input class="btn btn-danger" type="submit" value="Delete"></form>
                         </div>
                     </td>
                 </tr>
@@ -43,6 +43,6 @@
             </tbody>
         </table>
         {{ $coupons->links() }}
-        <a class="btn btn-success" type="button" href="{{ route('coupons.create') }}">Добавить купон</a>
+        <a class="btn btn-success" type="button" href="{{ route('coupons.create') }}">Add coupon</a>
     </div>
 @endsection

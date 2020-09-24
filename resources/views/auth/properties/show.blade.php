@@ -1,18 +1,18 @@
 @extends('auth.layouts.master')
 
-@section('title', 'Свойство ' . $property->name)
+@section('title', 'Property ' . $property->name_en)
 
 @section('content')
     <div class="col-md-12">
-        <h1>Property {{ $property->name }}</h1>
+        <h1>Property {{ $property->name_en }}</h1>
         <table class="table">
             <tbody>
             <tr>
                 <th>
-                    Field
+                    @lang('auth.field)
                 </th>
                 <th>
-                    Value
+                    @lang('auth.value)
                 </th>
             </tr>
             <tr>
@@ -20,15 +20,15 @@
                 <td>{{ $property->id }}</td>
             </tr>
             <tr>
-                <td>Name RU</td>
+                <td>@lang('auth.name) RU</td>
                 <td>{{ $property->name }}</td>
             </tr>
             <tr>
-                <td>Name EN</td>
+                <td>@lang('auth.name) EN</td>
                 <td>{{ $property->name_en }}</td>
             </tr>
             <tr>
-                <td>Name LV</td>
+                <td>@lang('auth.name) LV</td>
                 <td>{{ $property->name_lv }}</td>
             </tr>
 {{--            <tr>--}}

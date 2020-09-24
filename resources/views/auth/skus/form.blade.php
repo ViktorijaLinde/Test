@@ -1,17 +1,17 @@
 @extends('auth.layouts.master')
 
 @isset($skus)
-    @section('title', 'Редактировать Sku ' . $skus->name)
+    @section('title', 'Sku editing ' . $skus->name)
 @else
-    @section('title', 'Создать Sku')
+    @section('title', 'Create Sku')
 @endisset
 
 @section('content')
     <div class="col-md-12">
         @isset($skus)
-            <h1>Редактировать Sku <b>{{ $skus->name }}</b></h1>
+            <h1>Edit Sku <b>{{ $skus->name }}</b></h1>
         @else
-            <h1>Добавить Sku</h1>
+            <h1>Add Sku</h1>
         @endisset
 
         <form method="POST" enctype="multipart/form-data"
@@ -28,7 +28,7 @@
                 @csrf
 
                     <div class="input-group row">
-                        <label for="price" class="col-sm-2 col-form-label">Цена: </label>
+                        <label for="price" class="col-sm-2 col-form-label">Price: </label>
                         <div class="col-sm-2">
                             @include('auth.layouts.error', ['fieldName' => 'price'])
                             <input type="text" class="form-control" name="price"
@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <div class="input-group row">
-                        <label for="count" class="col-sm-2 col-form-label">Кол-во: </label>
+                        <label for="count" class="col-sm-2 col-form-label">Quantity: </label>
                         <div class="col-sm-2">
                             @include('auth.layouts.error', ['fieldName' => 'count'])
                             <input type="text" class="form-control" name="count"
@@ -57,14 +57,14 @@
                                             selected
                                         @endif
                                         @endisset
-                                    >{{ $propertyOption->name }}</option>
+                                    >{{ $propertyOption->name_en }}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
                 @endforeach
 
-                <button class="btn btn-success">Сохранить</button>
+                <button class="btn btn-success">@lang('main.save')</button>
             </div>
         </form>
     </div>

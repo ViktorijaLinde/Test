@@ -1,26 +1,26 @@
 @extends('auth.layouts.master')
 
-@section('title', 'Заказ ' . $order->id)
+@section('title', 'Order ' . $order->id)
 
 @section('content')
     <div class="py-4">
         <div class="container">
             <div class="justify-content-center">
                 <div class="panel">
-                    <h1>Заказ №{{ $order->id }}</h1>
-                    <p>Заказчик: <b>{{ $order->name }}</b></p>
-                    <p>Номер телефона: <b>{{ $order->phomne }}</b></p>
+                    <h1>Order №{{ $order->id }}</h1>
+                    <p>Customer's name: <b>{{ $order->name }}</b></p>
+                    <p>Number: <b>{{ $order->phone }}</b></p>
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th>Название</th>
-                            <th>Кол-во</th>
-                            <th>Цена</th>
-                            <th>Стоимость</th>
+                            <th>@lang('auth.name)</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach ($skus as $sku)
+                        @foreach ($skus ?? '' as $sku)
                             <tr>
                                 <td>
                                     <a href="{{ route('sku', [$sku->product->category->code, $sku->product->code, $sku]) }}">
@@ -35,12 +35,12 @@
                             </tr>
                         @endforeach
                         <tr>
-                            <td colspan="3">Общая стоимость:</td>
+                            <td colspan="3">Sum:</td>
                             <td>{{ $order->sum }}€</td>
                         </tr>
                         @if($order->hasCoupon())
                             <tr>
-                                <td colspan="3">Был использован купон:</td>
+                                <td colspan="3">Was added coupon:</td>
                                 <td><a href="{{ route('coupons.show', $order->coupon) }}">{{ $order->coupon->code }}</a></td>
                             </tr>
                         @endif

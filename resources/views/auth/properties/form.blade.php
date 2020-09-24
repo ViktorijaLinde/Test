@@ -1,15 +1,15 @@
 @extends('auth.layouts.master')
 
 @isset($property)
-    @section('title', 'Редактировать свойство ' . $property->name)
+    @section('title', 'Property editing ' . $property->name)
 @else
-    @section('title', 'Создать свойство')
+    @section('title', 'Create property')
 @endisset
 
 @section('content')
     <div class="col-md-12">
         @isset($property)
-            <h1>Edit property <b>{{ $property->name }}</b></h1>
+            <h1>Edit property <b>{{ $property->name_en }}</b></h1>
                 @else
                     <h1>Add property</h1>
                 @endisset
@@ -50,16 +50,16 @@
                             </div>
                             <br>
                             <div class="input-group row">
-                                <label for="name" class="col-sm-2 col-form-label">Name LV: </label>
+                                <label for="name" class="col-sm-2 col-form-label">@lang('auth.name) LV: </label>
                                 <div class="col-sm-6">
                                     @error('name_lv')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-                                    <input type="text" class="form-control" name="name_en" id="name_lv"
+                                    <input type="text" class="form-control" name="name_lv" id="name_lv"
                                            value="@isset($property){{ $property->name_lv }}@endisset">
                                 </div>
                             </div>
-                        <button class="btn btn-success">Save</button>
+                        <button class="btn btn-success">@lang('main.save')</button>
                     </div>
                 </form>
     </div>

@@ -1,18 +1,18 @@
 @extends('auth.layouts.master')
 
-@section('title', 'Продукт ' . $product->name)
+@section('title', 'Product ' . $product->name_en)
 
 @section('content')
     <div class="col-md-12">
-        <h1>{{ $product->name }}</h1>
+        <h1>{{ $product->name_en }}</h1>
         <table class="table">
             <tbody>
             <tr>
                 <th>
-                    Field
+                    @lang('auth.field)
                 </th>
                 <th>
-                    Value
+                    @lang('auth.value)
                 </th>
             </tr>
             <tr>
@@ -20,19 +20,19 @@
                 <td>{{ $product->id}}</td>
             </tr>
             <tr>
-                <td>Code</td>
+                <td>@lang('auth.code)</td>
                 <td>{{ $product->code }}</td>
             </tr>
             <tr>
-                <td>Name RU</td>
+                <td>@lang('auth.name) RU</td>
                 <td>{{ $product->name }}</td>
             </tr>
             <tr>
-                <td>Name EN</td>
+                <td>@lang('auth.name) EN</td>
                 <td>{{ $product->name_en }}</td>
             </tr>
             <tr>
-                <td>Name LV</td>
+                <td>@lang('auth.name) LV</td>
                 <td>{{ $product->name_lv }}</td>
             </tr>
             <tr>
@@ -41,7 +41,7 @@
             </tr>
             <tr>
                 <td>Category</td>
-                <td>{{ $product->category->name }}</td>
+                <td>{{ $product->category->@lang('auth.name) }}</td>
             </tr>
             <tr>
                 <td>Labels</td>

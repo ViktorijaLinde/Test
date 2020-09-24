@@ -26,5 +26,8 @@ return [
     'title' => 'Galvenā',
     'add_to_basket' => 'Ielikt grozā',
     'more' => 'Vairāk',
-    'not_available' => 'Nav pieejams'
+    'not_available' => 'Nav pieejams',
+    'password'=>'Parole',
+    'register'=>'Reģistrācija',
+    'popular'=>'Vispopulārākās preces'
 ];

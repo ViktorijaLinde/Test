@@ -1,15 +1,15 @@
 @extends('auth.layouts.master')
 
 @isset($product)
-    @section('title', 'Редактировать товар ' . $product->name)
+    @section('title', 'Product editing ' . $product->name_en)
 @else
-    @section('title', 'Создать товар')
+    @section('title', 'Create product')
 @endisset
 
 @section('content')
     <div class="col-md-12">
         @isset($product)
-            <h1>Edit product <b>{{ $product->name }}</b></h1>
+            <h1>Edit product <b>{{ $product->name_en }}</b></h1>
         @else
             <h1>Add product</h1>
         @endisset
@@ -26,7 +26,7 @@
                 @endisset
                 @csrf
                 <div class="input-group row">
-                    <label for="code" class="col-sm-2 col-form-label">Code: </label>
+                    <label for="code" class="col-sm-2 col-form-label">@lang('auth.code): </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error', ['fieldName' => 'code'])
                         <input type="text" class="form-control" name="code" id="code"
@@ -35,7 +35,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Name RU: </label>
+                    <label for="name" class="col-sm-2 col-form-label">@lang('auth.name) RU: </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error', ['fieldName' => 'name'])
                         <input type="text" class="form-control" name="name" id="name"
@@ -44,7 +44,7 @@
                 </div>
                 <br>
                     <div class="input-group row">
-                        <label for="name" class="col-sm-2 col-form-label">Name EN: </label>
+                        <label for="name" class="col-sm-2 col-form-label">@lang('auth.name) EN: </label>
                         <div class="col-sm-6">
                             @include('auth.layouts.error', ['fieldName' => 'name_en'])
                             <input type="text" class="form-control" name="name_en" id="name_en"
@@ -53,7 +53,7 @@
                     </div>
                                 <br>
                     <div class="input-group row">
-                        <label for="name" class="col-sm-2 col-form-label">Name LV: </label>
+                        <label for="name" class="col-sm-2 col-form-label">@lang('auth.name) LV: </label>
                         <div class="col-sm-6">
                             @include('auth.layouts.error', ['fieldName' => 'name_lv'])
                             <input type="text" class="form-control" name="name_lv" id="name_lv"
@@ -125,7 +125,7 @@
                     </div>
                     <br>
                 @endforeach
-                <button class="btn btn-success">Save</button>
+                <button class="btn btn-success">@lang('main.save')</button>
             </div>
         </form>
     </div>

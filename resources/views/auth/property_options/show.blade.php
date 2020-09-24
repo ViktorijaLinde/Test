@@ -1,18 +1,18 @@
 @extends('auth.layouts.master')
 
-@section('title', 'Вариант свойства ' . $propertyOption->name)
+@section('title', 'Property option ' . $propertyOption->name_en)
 
 @section('content')
     <div class="col-md-12">
-        <h1>Вариант свойства {{ $propertyOption->name }}</h1>
+        <h1>Property option {{ $propertyOption->name_en }}</h1>
         <table class="table">
             <tbody>
             <tr>
                 <th>
-                    Поле
+                    @lang('auth.field)
                 </th>
                 <th>
-                    Значение
+                    @lang('auth.value)
                 </th>
             </tr>
             <tr>
@@ -20,16 +20,20 @@
                 <td>{{ $propertyOption->id }}</td>
             </tr>
             <tr>
-                <td>Свойство</td>
+                <td>Option</td>
                 <td>{{ $propertyOption->property->name }}</td>
             </tr>
             <tr>
-                <td>Название</td>
+                <td>@lang('auth.name) RU</td>
                 <td>{{ $propertyOption->name }}</td>
             </tr>
             <tr>
-                <td>Название en</td>
+                <td>@lang('auth.name) EN</td>
                 <td>{{ $propertyOption->name_en }}</td>
+            </tr>
+            <tr>
+                <td>@lang('auth.name) LV</td>
+                <td>{{ $propertyOption->name_lv }}</td>
             </tr>
             </tbody>
         </table>

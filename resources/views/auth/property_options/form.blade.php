@@ -1,17 +1,17 @@
 @extends('auth.layouts.master')
 
 @isset($propertyOption)
-    @section('title', 'Редактировать вариант свойства ' . $propertyOption->name)
+    @section('title', 'Property option editing ' . $propertyOption->name)
 @else
-    @section('title', 'Создать вариант свойства')
+    @section('title', 'Create property option')
 @endisset
 
 @section('content')
     <div class="col-md-12">
         @isset($propertyOption)
-            <h1>Редактировать вариант свойства <b>{{ $propertyOption->name }}</b></h1>
+            <h1>Edit property option <b>{{ $propertyOption->name_en }}</b></h1>
                 @else
-                    <h1>Добавить вариант свойства</h1>
+                    <h1>Add property option</h1>
                 @endisset
 
                 <form method="POST" enctype="multipart/form-data"
@@ -27,10 +27,10 @@
                         @endisset
                         @csrf
                             <div>
-                                <h2>Свойство {{ $property->name }}</h2>
+                                <h2>Property {{ $property->name }}</h2>
                             </div>
                         <div class="input-group row">
-                            <label for="name" class="col-sm-2 col-form-label">Название: </label>
+                            <label for="name" class="col-sm-2 col-form-label">@lang('auth.name) RU: </label>
                             <div class="col-sm-6">
                                 @error('name')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -42,7 +42,7 @@
 
                             <br>
                             <div class="input-group row">
-                                <label for="name" class="col-sm-2 col-form-label">Название en: </label>
+                                <label for="name" class="col-sm-2 col-form-label">@lang('auth.name) EN: </label>
                                 <div class="col-sm-6">
                                     @error('name_en')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -51,8 +51,18 @@
                                            value="@isset($propertyOption){{ $propertyOption->name_en }}@endisset">
                                 </div>
                             </div>
-
-                        <button class="btn btn-success">Сохранить</button>
+                            <br>
+                            <div class="input-group row">
+                                <label for="name" class="col-sm-2 col-form-label">@lang('auth.name) LV: </label>
+                                <div class="col-sm-6">
+                                    @error('name_lv')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                    <input type="text" class="form-control" name="name_lv" id="name_lv"
+                                           value="@isset($propertyOption){{ $propertyOption->name_lv }}@endisset">
+                                </div>
+                            </div>
+                        <button class="btn btn-success">@lang('main.save')</button>
                     </div>
                 </form>
     </div>

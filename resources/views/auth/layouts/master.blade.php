@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Админка: @yield('title')</title>
+    <title>Admin panel: @yield('title')</title>
 
     <!-- Scripts -->
     <script src="/js/app.js" defer></script>
@@ -24,30 +24,29 @@
     <nav class="navbar navbar-default navbar-expand-md navbar-light navbar-laravel">
         <div class="container">
             <a class="navbar-brand" href="{{ route('index') }}">
-                Вернуться на сайт
+                @lang('auth.back')
             </a>
 
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     @admin
-                    <li><a href="{{ route('categories.index') }}">Категории</a></li>
-                    <li><a href="{{ route('products.index') }}">Товары</a>
-                    <li><a href="{{ route('properties.index') }}">Свойства</a>
-                    <li><a href="{{ route('coupons.index') }}">Купоны</a>
-                    <li><a href="{{ route('merchants.index') }}">Поставщики</a>
+                    <li><a href="{{ route('categories.index') }}">@lang('auth.categories')</a></li>
+                    <li><a href="{{ route('products.index') }}">@lang('auth.prices')</a>
+                    <li><a href="{{ route('properties.index') }}">@lang('auth.properties')</a>
+                    <li><a href="{{ route('coupons.index') }}">@lang('auth.coupons')</a>
+                    <li><a href="{{ route('merchants.index') }}">@lang('auth.merchants')</a>
                     </li>
-                    <li><a href="{{ route('home') }}">Заказы</a></li>
-                    <li><a href="{{ route('locale', __('main.set_lang')) }}">@lang('main.set_lang')</a></li>
+                    <li><a href="{{ route('home') }}">@lang('auth.orders')</a></li>
                     @endadmin
                 </ul>
 
                 @guest
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Войти</a>
+                            <a class="nav-link" href="{{ route('login') }}">@lang('auth.login')</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Зарегистрироваться</a>
+                            <a class="nav-link" href="{{ route('register') }}">@lang('auth.register')</a>
                         </li>
                     </ul>
                 @endguest
@@ -58,7 +57,7 @@
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false" v-pre>
-                                @admin Администратор @else {{ Auth::user()->name }} @endadmin
+                                @admin Administrator @else {{ Auth::user()->name }} @endadmin
 
                             </a>
 
@@ -66,7 +65,7 @@
                                 <a class="dropdown-item" href="{{ route('logout')}}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    Выйти
+                                    @lang('auth.logout')
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout')}}" method="POST"

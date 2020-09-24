@@ -1,18 +1,19 @@
 @extends('auth.layouts.master')
 
-@section('title', 'Category ' . $category->name)
-
+@section('title')
+@lang('auth.category') {{$category->name_en}}
+@endsection
 @section('content')
     <div class="col-md-12">
-        <h1>Category {{ $category->name }}</h1>
+        <h1>@lang('auth.category') {{ $category->name_en }}</h1>
         <table class="table">
             <tbody>
             <tr>
                 <th>
-                    Field
+                    @lang('auth.field')
                 </th>
                 <th>
-                    Value
+                    @lang('auth.value')
                 </th>
             </tr>
             <tr>
@@ -20,28 +21,28 @@
                 <td>{{ $category->id }}</td>
             </tr>
             <tr>
-                <td>Code</td>
+                <td>@lang('auth.code)</td>
                 <td>{{ $category->code }}</td>
             </tr>
             <tr>
-                <td>Name RU</td>
+                <td>@lang('auth.name') RU</td>
                 <td>{{ $category->name }}</td>
             </tr>
             <tr>
-                <td>Name EN</td>
+                <td>@lang('auth.name') EN</td>
                 <td>{{ $category->name_en }}</td>
             </tr>
             <tr>
-                <td>Name LV</td>
+                <td>@lang('auth.name') LV</td>
                 <td>{{ $category->name_lv }}</td>
             </tr>
             <tr>
-                <td>Image</td>
+                <td>@lang('auth.image')</td>
                 <td><img src="{{ Storage::url($category->image) }}"
                          height="240px"></td>
             </tr>
             <tr>
-                <td>Quantity</td>
+                <td>@lang('auth.quantity')</td>
                 <td>{{ $category->products->count() }}</td>
             </tr>
             </tbody>

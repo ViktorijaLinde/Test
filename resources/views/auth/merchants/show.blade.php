@@ -1,18 +1,18 @@
 @extends('auth.layouts.master')
 
-@section('title', 'Поставщик ' . $merchant->name)
+@section('title', 'Merchant ' . $merchant->name)
 
 @section('content')
     <div class="col-md-12">
-        <h1>Поставщик {{ $merchant->name }}</h1>
+        <h1>Merchant {{ $merchant->name }}</h1>
         <table class="table">
             <tbody>
             <tr>
                 <th>
-                    Поле
+                    @lang('auth.field)
                 </th>
                 <th>
-                    Значение
+                    @lang('auth.value)
                 </th>
             </tr>
             <tr>
@@ -20,7 +20,7 @@
                 <td>{{ $merchant->id }}</td>
             </tr>
             <tr>
-                <td>Название</td>
+                <td>@lang('auth.name)</td>
                 <td>{{ $merchant->name }}</td>
             </tr>
             <tr>

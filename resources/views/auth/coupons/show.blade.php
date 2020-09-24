@@ -1,6 +1,6 @@
 @extends('auth.layouts.master')
 
-@section('title', 'Купон ' . $coupon->code)
+@section('title') @lang('auth.coupon') {{$coupon->code}} @endsection
 
 @section('content')
     <div class="col-md-12">
@@ -9,10 +9,10 @@
             <tbody>
             <tr>
                 <th>
-                    Поле
+                    @lang('auth.field')
                 </th>
                 <th>
-                    Значение
+                    @lang('auth.value)
                 </th>
             </tr>
             <tr>
@@ -20,42 +20,42 @@
                 <td>{{ $coupon->id}}</td>
             </tr>
             <tr>
-                <td>Код</td>
+                <td>@lang('auth.code)</td>
                 <td>{{ $coupon->code }}</td>
             </tr>
             <tr>
-                <td>Описание</td>
+                <td>@lang('auth.descript)</td>
                 <td>{{ $coupon->description }}</td>
             </tr>
             @isset($coupon->currency)
                 <tr>
-                    <td>Валюта</td>
+                    <td>@lang('auth.currency)</td>
                     <td>{{ $coupon->currency->code }}</td>
                 </tr>
             @endisset
             <tr>
-                <td>Абсолютное значенин</td>
+                <td>@lang('auth.is_absolute')</td>
                 <td>@if($coupon->isAbsolute()) Да @else Нет @endif</td>
             </tr>
             <tr>
                 <td>
-                    Скидка
+                    @lang('auth.discount')
                 </td>
                 <td>
                     {{ $coupon->value }} @if($coupon->isAbsolute()) {{ $coupon->currency->code }} @else % @endif
                 </td>
             </tr>
             <tr>
-                <td>Использовать один раз</td>
+                <td>@lang('auth.is_used_once')</td>
                 <td>@if($coupon->isOnlyOnce()) Да @else Нет @endif</td>
             </tr>
             <tr>
-                <td>Использован:</td>
+                <td>@lang('auth.used'):</td>
                 <td>{{ $coupon->orders->count() }}</td>
             </tr>
             @if($coupon->expired_at)
                 <tr>
-                    <td>Действителен до:</td>
+                    <td>@lang('auth.expired_at'):</td>
                     <td>{{ $coupon->expired_at->format('d.m.Y') }}</td>
                 </tr>
             @endisset

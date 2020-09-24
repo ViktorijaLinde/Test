@@ -1,17 +1,17 @@
 @extends('auth.layouts.master')
 
 @isset($merchant)
-    @section('title', 'Редактировать поставщика ' . $merchant->name)
+    @section('title') @lang('auth.edit_merch') {{$merchant->name)}} @endsection
 @else
-    @section('title', 'Создать поставщика')
+    @section('title') @lang('auth.create_merch') @endsection
 @endisset
 
 @section('content')
     <div class="col-md-12">
         @isset($merchant)
-            <h1>Редактировать поставщика <b>{{ $merchant->name }}</b></h1>
+            <h1>@lang('auth.edit_merch') <b>{{ $merchant->name }}</b></h1>
                 @else
-                    <h1>Добавить поставщика</h1>
+                    <h1>@lang('auth.add_merch')</h1>
                 @endisset
 
                 <form method="POST" enctype="multipart/form-data"
@@ -27,7 +27,7 @@
                         @endisset
                         @csrf
                         <div class="input-group row">
-                            <label for="name" class="col-sm-2 col-form-label">Название: </label>
+                            <label for="name" class="col-sm-2 col-form-label">@lang('auth.name): </label>
                             <div class="col-sm-6">
                                 @error('name')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -39,7 +39,7 @@
 
                             <br>
                             <div class="input-group row">
-                                <label for="email" class="col-sm-2 col-form-label">Email: </label>
+                                <label for="email" class="col-sm-2 col-form-label">@lang('auth.email'): </label>
                                 <div class="col-sm-6">
                                     @error('email')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -49,7 +49,7 @@
                                 </div>
                             </div>
 
-                        <button class="btn btn-success">Сохранить</button>
+                        <button class="btn btn-success">@lang('main.save')</button>
                     </div>
                 </form>
     </div>

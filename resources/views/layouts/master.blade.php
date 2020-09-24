@@ -67,14 +67,14 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-lg-6"><p>Категории товаров</p>
+            <div class="col-lg-6"><p>@lang('main.categories')</p>
                 <ul>
                     @foreach($categories as $category)
                         <li><a href="{{ route('category', $category->code) }}">{{ $category->__('name') }}</a></li>
                     @endforeach
                 </ul>
             </div>
-            <div class="col-lg-6">@lang('main.categories')
+            <div class="col-lg-6"><p>@lang('main.popular')</p>
                 <ul>
                     @foreach ($bestSkus as $bestSku)
                         <li><a href="{{ route('sku',

@@ -28,5 +28,7 @@ return [
     'add_to_basket' => 'Add to cart',
     'more' => 'More about',
     'not_available' => 'Not available',
-    'project_reset' => 'The Project was reset',
+    'password'=>'Password',
+    'register'=>'Register',
+    'popular'=>'Most popular'
 ];

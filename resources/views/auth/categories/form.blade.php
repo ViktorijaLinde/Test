@@ -1,17 +1,20 @@
 @extends('auth.layouts.master')
 
 @isset($category)
-    @section('title', 'Category editing ' . $category->name)
+    @section('title') 
+    @lang('main.edit_cat'){{$category->name}} @endsection
 @else
-    @section('title', 'Add category')
+    @section('title') 
+@lang('auth.add_cat')
+@endsection
 @endisset
 
 @section('content')
     <div class="col-md-12">
         @isset($category)
-            <h1>Edit category <b>{{ $category->name }}</b></h1>
+            <h1>@lang('main.edit_cat')<b>{{ $category->name_en }}</b></h1>
                 @else
-                    <h1>Add cetegory</h1>
+                    <h1>@lang('auth.add_cat')</h1>
                 @endisset
 
                 <form method="POST" enctype="multipart/form-data"
@@ -27,7 +30,7 @@
                         @endisset
                         @csrf
                         <div class="input-group row">
-                            <label for="code" class="col-sm-2 col-form-label">Code: </label>
+                            <label for="code" class="col-sm-2 col-form-label">@lang('main.code'): </label>
                             <div class="col-sm-6">
                                 @error('code')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -38,7 +41,7 @@
                         </div>
                         <br>
                         <div class="input-group row">
-                            <label for="name" class="col-sm-2 col-form-label">Name RU: </label>
+                            <label for="name" class="col-sm-2 col-form-label">@lang('main.name') RU: </label>
                             <div class="col-sm-6">
                                 @error('name')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -50,7 +53,7 @@
 
                             <br>
                             <div class="input-group row">
-                                <label for="name" class="col-sm-2 col-form-label">Name EN: </label>
+                                <label for="name" class="col-sm-2 col-form-label">@lang('main.name') EN: </label>
                                 <div class="col-sm-6">
                                     @error('name_en')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -61,7 +64,7 @@
                             </div>
                             <br>
                             <div class="input-group row">
-                                <label for="name" class="col-sm-2 col-form-label">Namе LV: </label>
+                                <label for="name" class="col-sm-2 col-form-label">@lang('main.name') LV: </label>
                                 <div class="col-sm-6">
                                     @error('name_lv')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -72,14 +75,14 @@
                             </div>
 
                         <div class="input-group row">
-                            <label for="image" class="col-sm-2 col-form-label">Image: </label>
+                            <label for="image" class="col-sm-2 col-form-label">@lang('main.image'): </label>
                             <div class="col-sm-10">
                                 <label class="btn btn-default btn-file">
-                                    Upload <input type="file" style="display: none;" name="image" id="image">
+                                    @lang('main.upload') <input type="file" style="display: none;" name="image" id="image">
                                 </label>
                             </div>
                         </div>
-                        <button class="btn btn-success">Save</button>
+                        <button class="btn btn-success">@lang('main.save')</button>
                     </div>
                 </form>
     </div>

@@ -1,10 +1,12 @@
 @extends('auth.layouts.master')
 
-@section('title', 'Заказы')
+@section('title') 
+@lang('auth.orders')
+@endsection
 
 @section('content')
     <div class="col-md-12">
-        <h1>Заказы</h1>
+        <h1>@lang('auth.orders')</h1>
         <table class="table">
             <tbody>
             <tr>
@@ -12,19 +14,19 @@
                     #
                 </th>
                 <th>
-                    Имя
+                  @lang('auth.name')
                 </th>
                 <th>
-                    Телефон
+                    @lang('auth.number')
                 </th>
                 <th>
-                    Когда отправлен
+                    @lang('auth.created')
                 </th>
                 <th>
-                    Сумма
+                    @lang('auth.total')
                 </th>
                 <th>
-                    Действия
+                    @lang('auth.action')
                 </th>
             </tr>
             @foreach($orders as $order)
@@ -42,7 +44,7 @@
                                @else
                                href="{{ route('person.orders.show', $order) }}"
                                 @endadmin
-                            >Открыть</a>
+                            >@lang('auth.open')</a>
                         </div>
                     </td>
                 </tr>

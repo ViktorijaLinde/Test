@@ -385,7 +385,7 @@ class ContentSeeder extends Seeder
                         $skuId = DB::table('skus')->insertGetId([
                             'product_id' => $productId,
                             'count' => rand(1, 100),
-                            'price' => rand(5000, 100000),
+                            'price' => rand(500, 3000),
                             'created_at' => Carbon::now(),
                             'updated_at' => Carbon::now(),
                         ]);

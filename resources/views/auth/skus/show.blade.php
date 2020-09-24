@@ -1,6 +1,6 @@
 @extends('auth.layouts.master')
 
-@section('title', 'Sku ' . $skus->name)
+@section('title', 'Sku ' . $skus->name_en)
 
 @section('content')
     <div class="col-md-12">
@@ -10,10 +10,10 @@
             <tbody>
             <tr>
                 <th>
-                    Поле
+                    @lang('auth.field)
                 </th>
                 <th>
-                    Значение
+                    @lang('auth.value)
                 </th>
             </tr>
             <tr>
@@ -21,11 +21,11 @@
                 <td>{{ $skus->id }}</td>
             </tr>
             <tr>
-                <td>Цена</td>
+                <td>Price</td>
                 <td>{{ $skus->price }}</td>
             </tr>
             <tr>
-                <td>Кол-во</td>
+                <td>Quantity</td>
                 <td>{{ $skus->count }}</td>
             </tr>
             </tbody>
