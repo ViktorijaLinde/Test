@@ -10,7 +10,7 @@ class Property extends Model
 {
     use SoftDeletes, Translatable;
 
-    protected $fillable = ['name', 'name_en'];
+    protected $fillable = ['name', 'name_en', 'name_lv'];
 
     public function propertyOptions()
     {

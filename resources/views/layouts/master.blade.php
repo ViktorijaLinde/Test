@@ -74,7 +74,7 @@
                     @endforeach
                 </ul>
             </div>
-            <div class="col-lg-6"><p>Самые популярные товары</p>
+            <div class="col-lg-6">@lang('main.categories')
                 <ul>
                     @foreach ($bestSkus as $bestSku)
                         <li><a href="{{ route('sku',

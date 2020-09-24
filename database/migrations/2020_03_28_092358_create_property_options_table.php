@@ -18,8 +18,8 @@ class CreatePropertyOptionsTable extends Migration
             $table->unsignedInteger('property_id');
             $table->string('name');
             $table->string('name_en');
+            $table->string('name_lv');
             $table->timestamps();
-
             $table->softDeletes();
         });
     }

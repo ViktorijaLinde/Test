@@ -15,7 +15,7 @@ class LocalizationCategories extends Migration
     {
         Schema::table('categories', function (Blueprint $table) {
             $table->string('name_en')->nullable();
-            $table->text('description_en')->nullable();
+            $table->string('name_lv')->nullable();
         });
     }
 
@@ -27,7 +27,7 @@ class LocalizationCategories extends Migration
     public function down()
     {
         Schema::table('categories', function (Blueprint $table) {
-            $table->dropColumn(['name_en', 'description_en']);
+            $table->dropColumn(['name_en', 'name_lv']);
         });
     }
 }

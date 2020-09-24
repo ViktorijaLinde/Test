@@ -26,6 +26,7 @@ class PropertyRequest extends FormRequest
         return [
             'name' => 'required',
             'name_en' => 'required',
+            'name_lv'=>'required'
         ];
     }
 }

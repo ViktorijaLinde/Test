@@ -9,7 +9,7 @@ class Category extends Model
 {
     use Translatable;
 
-    protected $fillable = ['code', 'name', 'description', 'image', 'name_en', 'description_en'];
+    protected $fillable = ['code', 'name', 'image', 'name_en', 'name_lv'];
 
     public function products()
     {

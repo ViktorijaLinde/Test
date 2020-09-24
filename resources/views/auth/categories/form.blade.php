@@ -1,17 +1,17 @@
 @extends('auth.layouts.master')
 
 @isset($category)
-    @section('title', 'Редактировать категорию ' . $category->name)
+    @section('title', 'Category editing ' . $category->name)
 @else
-    @section('title', 'Создать категорию')
+    @section('title', 'Add category')
 @endisset
 
 @section('content')
     <div class="col-md-12">
         @isset($category)
-            <h1>Редактировать Категорию <b>{{ $category->name }}</b></h1>
+            <h1>Edit category <b>{{ $category->name }}</b></h1>
                 @else
-                    <h1>Добавить Категорию</h1>
+                    <h1>Add cetegory</h1>
                 @endisset
 
                 <form method="POST" enctype="multipart/form-data"
@@ -27,7 +27,7 @@
                         @endisset
                         @csrf
                         <div class="input-group row">
-                            <label for="code" class="col-sm-2 col-form-label">Код: </label>
+                            <label for="code" class="col-sm-2 col-form-label">Code: </label>
                             <div class="col-sm-6">
                                 @error('code')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -38,7 +38,7 @@
                         </div>
                         <br>
                         <div class="input-group row">
-                            <label for="name" class="col-sm-2 col-form-label">Название: </label>
+                            <label for="name" class="col-sm-2 col-form-label">Name RU: </label>
                             <div class="col-sm-6">
                                 @error('name')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -50,7 +50,7 @@
 
                             <br>
                             <div class="input-group row">
-                                <label for="name" class="col-sm-2 col-form-label">Название en: </label>
+                                <label for="name" class="col-sm-2 col-form-label">Name EN: </label>
                                 <div class="col-sm-6">
                                     @error('name_en')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -59,41 +59,27 @@
                                            value="@isset($category){{ $category->name_en }}@endisset">
                                 </div>
                             </div>
-
                             <br>
-                        <div class="input-group row">
-                            <label for="description" class="col-sm-2 col-form-label">Описание: </label>
-                            <div class="col-sm-6">
-                                @error('description')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-							<textarea name="description" id="description" cols="72"
-                                      rows="7">@isset($category){{ $category->description }}@endisset</textarea>
-                            </div>
-                        </div>
-                        <br>
-
                             <div class="input-group row">
-                                <label for="description" class="col-sm-2 col-form-label">Описание en: </label>
+                                <label for="name" class="col-sm-2 col-form-label">Namе LV: </label>
                                 <div class="col-sm-6">
-                                    @error('description_en')
+                                    @error('name_lv')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-                                    <textarea name="description_en" id="description_en" cols="72"
-                                              rows="7">@isset($category){{ $category->description_en }}@endisset</textarea>
+                                    <input type="text" class="form-control" name="name_lv" id="name_lv"
+                                           value="@isset($category){{ $category->name_lv }}@endisset">
                                 </div>
                             </div>
-                            <br>
 
                         <div class="input-group row">
-                            <label for="image" class="col-sm-2 col-form-label">Картинка: </label>
+                            <label for="image" class="col-sm-2 col-form-label">Image: </label>
                             <div class="col-sm-10">
                                 <label class="btn btn-default btn-file">
-                                    Загрузить <input type="file" style="display: none;" name="image" id="image">
+                                    Upload <input type="file" style="display: none;" name="image" id="image">
                                 </label>
                             </div>
                         </div>
-                        <button class="btn btn-success">Сохранить</button>
+                        <button class="btn btn-success">Save</button>
                     </div>
                 </form>
     </div>

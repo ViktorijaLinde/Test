@@ -1,17 +1,17 @@
 @extends('auth.layouts.master')
 
 @isset($coupon)
-    @section('title', 'Редактировать купон ' . $coupon->name)
+    @section('title', 'Coupon editing ' . $coupon->name)
 @else
-    @section('title', 'Создать купон')
+    @section('title', 'Create coupon')
 @endisset
 
 @section('content')
     <div class="col-md-12">
         @isset($coupon)
-            <h1>Редактировать купон</h1>
+            <h1>Edit Coupon</h1>
         @else
-            <h1>Добавить купон</h1>
+            <h1>Add coupon</h1>
         @endisset
         <form method="POST"
               @isset($coupon)
@@ -26,7 +26,7 @@
                 @endisset
                 @csrf
                 <div class="input-group row">
-                    <label for="code" class="col-sm-2 col-form-label">Код: </label>
+                    <label for="code" class="col-sm-2 col-form-label">Code: </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error', ['fieldName' => 'code'])
                         <input type="text" class="form-control" name="code" id="code"
@@ -35,7 +35,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="value" class="col-sm-2 col-form-label">Номинал: </label>
+                    <label for="value" class="col-sm-2 col-form-label">Value: </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error', ['fieldName' => 'value'])
                         <input type="text" class="form-control" name="value" id="value"
@@ -44,11 +44,11 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="currency_id" class="col-sm-2 col-form-label">Валюта: </label>
+                    <label for="currency_id" class="col-sm-2 col-form-label">Currency: </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error', ['fieldName' => 'currency_id'])
                         <select name="currency_id" id="currency_id" class="form-control">
-                            <option value="">Без валюты</option>
+                            <option value="">Without currency</option>
                             @foreach($currencies as $currency)
                                 <option value="{{ $currency->id }}"
                                         @isset($coupon)
@@ -80,7 +80,7 @@
                 @endforeach
                 <br>
                 <div class="input-group row">
-                    <label for="expired_at" class="col-sm-2 col-form-label">Использовать до: </label>
+                    <label for="expired_at" class="col-sm-2 col-form-label">Use until: </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error', ['fieldName' => 'expired_at'])
                         <input type="date" class="form-control" name="expired_at" id="expired_at"
@@ -90,7 +90,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="description" class="col-sm-2 col-form-label">Описание: </label>
+                    <label for="description" class="col-sm-2 col-form-label">Description: </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error', ['fieldName' => 'description'])
                         <textarea name="description" id="description" cols="72"
@@ -98,7 +98,7 @@
                     </div>
                 </div>
                 <br>
-                <button class="btn btn-success">Сохранить</button>
+                <button class="btn btn-success">Save</button>
             </div>
         </form>
     </div>

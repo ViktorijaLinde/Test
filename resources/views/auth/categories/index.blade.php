@@ -1,6 +1,6 @@
 @extends('auth.layouts.master')
 
-@section('title', 'Категории')
+@section('title', 'Categories')
 
 @section('content')
     <div class="col-md-12">
@@ -12,13 +12,13 @@
                     #
                 </th>
                 <th>
-                    Код
+                    Code
                 </th>
                 <th>
-                    Название
+                    Name
                 </th>
                 <th>
-                    Действия
+                    Actions
                 </th>
             </tr>
             @foreach($categories as $category)
@@ -29,8 +29,8 @@
                     <td>
                         <div class="btn-group" role="group">
                             <form action="{{ route('categories.destroy', $category) }}" method="POST">
-                                <a class="btn btn-success" type="button" href="{{ route('categories.show', $category) }}">Открыть</a>
-                                <a class="btn btn-warning" type="button" href="{{ route('categories.edit', $category) }}">Редактировать</a>
+                                <a class="btn btn-success" type="button" href="{{ route('categories.show', $category) }}">Open</a>
+                                <a class="btn btn-warning" type="button" href="{{ route('categories.edit', $category) }}">Edit</a>
                                 @csrf
                                 @method('DELETE')
                                 <input class="btn btn-danger" type="submit" value="Удалить"></form>
@@ -42,6 +42,6 @@
         </table>
         {{ $categories->links() }}
         <a class="btn btn-success" type="button"
-           href="{{ route('categories.create') }}">Добавить категорию</a>
+           href="{{ route('categories.create') }}">Add category</a>
     </div>
 @endsection

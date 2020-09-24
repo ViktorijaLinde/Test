@@ -17,6 +17,7 @@ class CreatePropertiesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('name_en');
+            $table->string('name_lv');
             $table->timestamps();
 
             $table->softDeletes();

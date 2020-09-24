@@ -9,9 +9,9 @@
 @section('content')
     <div class="col-md-12">
         @isset($property)
-            <h1>Редактировать Свойство <b>{{ $property->name }}</b></h1>
+            <h1>Edit property <b>{{ $property->name }}</b></h1>
                 @else
-                    <h1>Добавить Свойство</h1>
+                    <h1>Add property</h1>
                 @endisset
 
                 <form method="POST" enctype="multipart/form-data"
@@ -27,7 +27,7 @@
                         @endisset
                         @csrf
                         <div class="input-group row">
-                            <label for="name" class="col-sm-2 col-form-label">Название: </label>
+                            <label for="name" class="col-sm-2 col-form-label">Name RU: </label>
                             <div class="col-sm-6">
                                 @error('name')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -39,7 +39,7 @@
 
                             <br>
                             <div class="input-group row">
-                                <label for="name" class="col-sm-2 col-form-label">Название en: </label>
+                                <label for="name" class="col-sm-2 col-form-label">Name EN: </label>
                                 <div class="col-sm-6">
                                     @error('name_en')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -48,8 +48,18 @@
                                            value="@isset($property){{ $property->name_en }}@endisset">
                                 </div>
                             </div>
-
-                        <button class="btn btn-success">Сохранить</button>
+                            <br>
+                            <div class="input-group row">
+                                <label for="name" class="col-sm-2 col-form-label">Name LV: </label>
+                                <div class="col-sm-6">
+                                    @error('name_lv')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                    <input type="text" class="form-control" name="name_en" id="name_lv"
+                                           value="@isset($property){{ $property->name_lv }}@endisset">
+                                </div>
+                            </div>
+                        <button class="btn btn-success">Save</button>
                     </div>
                 </form>
     </div>

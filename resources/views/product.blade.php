@@ -14,7 +14,6 @@
     @endisset
 
     <img src="{{ Storage::url($skus->product->image) }}">
-    <p>{{ $skus->product->__('description') }}</p>
 
     @if($skus->isAvailable())
         <form action="{{ route('basket-add', $skus->product) }}" method="POST">

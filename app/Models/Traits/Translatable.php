@@ -12,9 +12,13 @@ trait Translatable
     {
         $locale = App::getLocale() ?? $this->defaultLocale;
 
-        if ($locale === 'en') {
+        if ($locale === 'lv') {
+            $fieldName = $originFieldName . '_lv';
+        }
+        else if ($locale ==='en'){
             $fieldName = $originFieldName . '_en';
-        } else {
+        }
+        else {
             $fieldName = $originFieldName;
         }
 
@@ -27,7 +31,9 @@ trait Translatable
         if ($locale === 'en' && (is_null($this->$fieldName) || empty($this->$fieldName))) {
             return $this->$originFieldName;
         }
-
+        if ($locale === 'lv' && (is_null($this->$fieldName) || empty($this->$fieldName))) {
+            return $this->$originFieldName;
+        }
         return $this->$fieldName;
     }
 }
