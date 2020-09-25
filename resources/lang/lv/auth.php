@@ -78,5 +78,6 @@ return [
     'skus'=>'Skus',
     'skus_prop'=>'Sku īpašības',
     'sku'=>'Sku',
+    'categories'=>'Kategorijas'
 
 ];

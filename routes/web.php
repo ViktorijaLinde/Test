@@ -14,7 +14,6 @@
 
 
 Route::get('locale/{locale}', 'MainController@changeLocale')->name('locale');
-Route::get('currency/{currencyCode}', 'MainController@changeCurrency')->name('currency');
 Route::get('/logout', 'Auth\LoginController@logout')->name('get-logout');
 
 Route::middleware(['set_locale'])->group(function () {
@@ -57,7 +56,6 @@ Auth::routes([
 
     Route::get('/', 'MainController@index')->name('index');
     Route::get('/categories', 'MainController@categories')->name('categories');
-    Route::post('subscription/{skus}', 'MainController@subscribe')->name('subscription');
 
     Route::group(['prefix' => 'basket'], function () {
         Route::post('/add/{skus}', 'BasketController@basketAdd')->name('basket-add');

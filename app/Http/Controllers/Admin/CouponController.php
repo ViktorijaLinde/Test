@@ -44,9 +44,8 @@ class CouponController extends Controller
             }
         }
 
-        if (!$request->has('type')) {
-            unset($params['currency_id']);
-        }
+        
+        
 
         Coupon::create($params);
         return redirect()->route('coupons.index');
@@ -92,9 +91,7 @@ class CouponController extends Controller
             }
         }
 
-        if (!$request->has('type')) {
-            $params['currency_id'] = null;
-        }
+
 
         $coupon->update($params);
         return redirect()->route('coupons.index');

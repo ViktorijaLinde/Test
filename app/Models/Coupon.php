@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
-use App\Services\CurrencyConversion;
+
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Coupon extends Model
 {
-    protected $fillable = ['code', 'value', 'type', 'currency_id', 'only_once', 'expired_at', 'description'];
+    protected $fillable = ['code', 'value', 'type', 'only_once', 'expired_at', 'description'];
 
     protected $dates = ['expired_at'];
 
@@ -17,10 +17,6 @@ class Coupon extends Model
         return $this->hasMany(Order::class);
     }
 
-    public function currency()
-    {
-        return $this->belongsTo(Currency::class);
-    }
 
     public function isAbsolute()
     {
@@ -41,10 +37,11 @@ class Coupon extends Model
         return false;
     }
 
-    public function applyCost($price, Currency $currency = null)
+    public function applyCost($price)
     {
         if ($this->isAbsolute()) {
-            return $price - CurrencyConversion::convert($this->value, $this->currency->code, $currency->code);
+            return $price - ($price * $this->value / 100);
+
         } else {
             return $price - ($price * $this->value / 100);
         }

@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'categories'=>'Категории',
     'name'=>'Имя',
     'email'=>'Э-майл',
     'password'=>'Пароль',

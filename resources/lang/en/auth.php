@@ -78,6 +78,7 @@ return [
     'skus'=>'Skus',
     'skus_prop'=>'Skus property',
     'sku'=>'Sku',
+    'categories'=>'Categories',
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 

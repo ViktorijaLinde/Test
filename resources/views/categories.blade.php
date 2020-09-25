@@ -9,9 +9,7 @@
                 <img src="{{ Storage::url($category->image) }}">
                 <h2>{{ $category->__('name') }}</h2>
             </a>
-            <p>
-                {{ $category->__('description') }}
-            </p>
+
         </div>
     @endforeach
 @endsection

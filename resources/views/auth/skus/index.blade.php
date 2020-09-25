@@ -1,10 +1,10 @@
 @extends('auth.layouts.master')
 
-@section('title') @lang('auth.skus')
+@section('title') @lang('auth.skus') @endsection
 
 @section('content')
     <div class="col-md-12">
-        <h1>Skus</h1>
+        <h1> @lang('auth.sku')</h1>
         <h2>{{ $product->name_en }}</h2>
         <table class="table">
             <tbody>

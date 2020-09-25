@@ -3,12 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductsFilterRequest;
-use App\Http\Requests\SubscriptionRequest;
 use App\Models\Category;
-use App\Models\Currency;
 use App\Models\Product;
 use App\Models\Sku;
-use App\Models\Subscription;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
@@ -61,16 +58,6 @@ class MainController extends Controller
         }
 
         return view('product', compact('skus'));
-    }
-
-    public function subscribe(SubscriptionRequest $request, Sku $skus)
-    {
-        Subscription::create([
-            'email' => $request->email,
-            'sku_id' => $skus->id,
-        ]);
-
-        return redirect()->back()->with('success', __('product.we_will_update'));
     }
 
     public function changeLocale($locale)

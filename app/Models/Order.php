@@ -6,17 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    protected $fillable = ['user_id', 'currency_id', 'sum', 'coupon_id'];
+    protected $fillable = ['user_id', 'sum', 'coupon_id'];
 
     public function skus()
     {
         return $this->belongsToMany(Sku::class)->withPivot(['count', 'price'])->withTimestamps();
     }
 
-    public function currency()
-    {
-        return $this->belongsTo(Currency::class);
-    }
 
     public function coupon()
     {
@@ -46,7 +42,7 @@ class Order extends Model
         }
 
         if ($withCoupon && $this->hasCoupon()) {
-            $sum = $this->coupon->applyCost($sum, $this->currency);
+            $sum = $this->coupon->applyCost($sum);
         }
 
         return $sum;

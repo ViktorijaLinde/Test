@@ -32,7 +32,7 @@
                                 <a class="btn btn-success" type="button"
                                    href="{{ route('coupons.show', $coupon) }}">@lang('auth.open')</a>
                                 <a class="btn btn-warning" type="button"
-                                   href="{{ route('coupons.@lang('auth.edit)', $coupon) }}">@lang('auth.edit')</a>
+                                   href="{{ route('coupons.edit', $coupon) }}">@lang('auth.edit')</a>
                                 @csrf
                                 @method('DELETE')
                                 <input class="btn btn-danger" type="submit" value="@lang('auth.delete')"></form>

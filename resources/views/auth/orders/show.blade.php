@@ -1,6 +1,6 @@
 @extends('auth.layouts.master')
 
-@section('title')@lang('auth.order') {{order->id}} @endsection
+@section('title')@lang('auth.order')  @endsection
 
 @section('content')
     <div class="py-4">

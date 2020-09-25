@@ -12,7 +12,7 @@
                     #
                 </th>
                 <th>
-                    @lang('auth.name)
+                    @lang('auth.name')
                 </th>
                 <th>
                     @lang('auth.action')

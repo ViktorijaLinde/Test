@@ -44,31 +44,11 @@
                     </div>
                 </div>
                 <br>
-                <div class="input-group row">
-                    <label for="currency_id" class="col-sm-2 col-form-label">@lang('auth.currency'): </label>
-                    <div class="col-sm-6">
-                        @include('auth.layouts.error', ['fieldName' => 'currency_id'])
-                        <select name="currency_id" id="currency_id" class="form-control">
-                            <option value="">@lang('auth.no_currency')</option>
-                            @foreach($currencies as $currency)
-                                <option value="{{ $currency->id }}"
-                                        @isset($coupon)
-                                        @if($coupon->currency_id == $currency->id)
-                                        selected
-                                    @endif
-                                    @endisset
-                                >{{ $currency->code }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-                <br>
                 @foreach ([
-                'type' => 'Абсолютное значение',
                 'only_once' => 'Купон может быть использован только один раз',
                 ] as $field => $title)
                     <div class="form-group row">
-                        <label for="code" class="col-sm-2 col-form-label">{{ $title }}: </label>
+                        <label for="code" class="col-sm-2 col-form-label">@lang('auth.is_used_once') </label>
                         <div class="col-sm-10">
                             <input type="checkbox" name="{{$field}}" id="{{$field}}"
                                    @if(isset($coupon) && $coupon->$field === 1)
@@ -99,7 +79,7 @@
                     </div>
                 </div>
                 <br>
-                <button class="btn btn-success">@lang('main.save')</button>
+                <button class="btn btn-success">@lang('auth.save')</button>
             </div>
         </form>
     </div>

@@ -27,12 +27,6 @@
                 <td>@lang('auth.descript')</td>
                 <td>{{ $coupon->description }}</td>
             </tr>
-            @isset($coupon->currency)
-                <tr>
-                    <td>@lang('auth.currency')</td>
-                    <td>{{ $coupon->currency->code }}</td>
-                </tr>
-            @endisset
             <tr>
                 <td>@lang('auth.is_absolute')</td>
                 <td>@if($coupon->isAbsolute()) Да @else Нет @endif</td>
@@ -42,7 +36,7 @@
                     @lang('auth.discount')
                 </td>
                 <td>
-                    {{ $coupon->value }} @if($coupon->isAbsolute()) {{ $coupon->currency->code }} @else % @endif
+                    {{ $coupon->value }} @if($coupon->isAbsolute())  @else % @endif
                 </td>
             </tr>
             <tr>

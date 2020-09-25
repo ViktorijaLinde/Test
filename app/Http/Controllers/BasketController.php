@@ -32,7 +32,7 @@ class BasketController extends Controller
             session()->flash('warning', __('basket.you_cant_order_more'));
         }
 
-        return redirect()->route('index');
+        return redirect()->route('auth.orders.show');
     }
 
     public function basketPlace()

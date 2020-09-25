@@ -26,7 +26,7 @@ class CouponRequest extends FormRequest
         return [
             'code' => 'required|min:6|max:8',
             'value' => 'required',
-            'currency_id' => 'required_with:type',
+            
         ];
     }
 }
