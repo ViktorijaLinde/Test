@@ -1,17 +1,17 @@
 @extends('auth.layouts.master')
 
 @isset($property)
-    @section('title', 'Property editing ' . $property->name)
+    @section('title') @lang('auth.edit_prop') {{$property->name}} @endsection
 @else
-    @section('title', 'Create property')
+    @section('title') @lang('auth.create_prop')
 @endisset
 
 @section('content')
     <div class="col-md-12">
         @isset($property)
-            <h1>Edit property <b>{{ $property->name_en }}</b></h1>
+            <h1>@lang('auth.edit_prop') <b>{{ $property->name_en }}</b></h1>
                 @else
-                    <h1>Add property</h1>
+                    <h1>@lang('auth.add_prop')</h1>
                 @endisset
 
                 <form method="POST" enctype="multipart/form-data"
@@ -27,7 +27,7 @@
                         @endisset
                         @csrf
                         <div class="input-group row">
-                            <label for="name" class="col-sm-2 col-form-label">Name RU: </label>
+                            <label for="name" class="col-sm-2 col-form-label">@lang('auth.name') RU: </label>
                             <div class="col-sm-6">
                                 @error('name')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -39,7 +39,7 @@
 
                             <br>
                             <div class="input-group row">
-                                <label for="name" class="col-sm-2 col-form-label">Name EN: </label>
+                                <label for="name" class="col-sm-2 col-form-label">@lang('auth.name') EN: </label>
                                 <div class="col-sm-6">
                                     @error('name_en')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -50,7 +50,7 @@
                             </div>
                             <br>
                             <div class="input-group row">
-                                <label for="name" class="col-sm-2 col-form-label">@lang('auth.name) LV: </label>
+                                <label for="name" class="col-sm-2 col-form-label">@lang('auth.name') LV: </label>
                                 <div class="col-sm-6">
                                     @error('name_lv')
                                     <div class="alert alert-danger">{{ $message }}</div>

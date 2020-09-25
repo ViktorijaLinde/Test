@@ -17,7 +17,7 @@
 
                         <div class="col-md-6">
                             <input id="email" type="email" class="form-control"
-                                   @lang('auth.name)="email" value="" required autofocus>
+                                   name="email" value="" required autofocus>
 
                         </div>
                     </div>
@@ -27,7 +27,7 @@
 
                         <div class="col-md-6">
                             <input id="password" type="password" class="form-control"
-                                   @lang('auth.name)="password" required>
+                                   name="password" required>
 
                         </div>
                     </div>

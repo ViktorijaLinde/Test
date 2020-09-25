@@ -1,10 +1,10 @@
 @extends('auth.layouts.master')
 
-@section('title', 'Property options')
+@section('title') @lang('auth.prop_opt')@endsection
 
 @section('content')
     <div class="col-md-12">
-        <h1>Property options</h1>
+        <h1>@lang('auth.prop_opt')</h1>
         <table class="table">
             <tbody>
             <tr>
@@ -12,13 +12,13 @@
                     #
                 </th>
                 <th>
-                    Property
+                    @lang('auth.property')
                 </th>
                 <th>
-                    @lang('auth.name)
+                    @lang('auth.name')
                 </th>
                 <th>
-                    Action
+                    @lang('auth.action')
                 </th>
             </tr>
             @foreach($propertyOptions as $propertyOption)
@@ -29,11 +29,11 @@
                     <td>
                         <div class="btn-group" role="group">
                             <form action="{{ route('property-options.destroy', [$property, $propertyOption]) }}" method="POST">
-                                <a class="btn btn-success" type="button" href="{{ route('property-options.show', [$property, $propertyOption]) }}">@lang('auth.open)</a>
-                                <a class="btn btn-warning" type="button" href="{{ route('property-options.edit', [$property, $propertyOption]) }}">@lang('auth.edit)</a>
+                                <a class="btn btn-success" type="button" href="{{ route('property-options.show', [$property, $propertyOption]) }}">@lang('auth.open')</a>
+                                <a class="btn btn-warning" type="button" href="{{ route('property-options.edit', [$property, $propertyOption]) }}">@lang('auth.edit')</a>
                                 @csrf
                                 @method('DELETE')
-                                <input class="btn btn-danger" type="submit" value="Delete"></form>
+                                <input class="btn btn-danger" type="submit" value="@lang('auth.delete')"></form>
                         </div>
                     </td>
                 </tr>
@@ -42,6 +42,6 @@
         </table>
         {{ $propertyOptions->links() }}
         <a class="btn btn-success" type="button"
-           href="{{ route('property-options.create', $property) }}">Add property option</a>
+           href="{{ route('property-options.create', $property) }}">@lang('auth.add_prop_opt')</a>
     </div>
 @endsection

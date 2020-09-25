@@ -1,17 +1,17 @@
 @extends('auth.layouts.master')
 
 @isset($product)
-    @section('title', 'Product editing ' . $product->name_en)
+    @section('title') @lang('auth.edit_prod') {{$product->name_en}} @endsection
 @else
-    @section('title', 'Create product')
+    @section('title') @lang('auth.create_prod') @endsection
 @endisset
 
 @section('content')
     <div class="col-md-12">
         @isset($product)
-            <h1>Edit product <b>{{ $product->name_en }}</b></h1>
+            <h1>@lang('auth.edit_prod')<b>{{ $product->name_en }}</b></h1>
         @else
-            <h1>Add product</h1>
+            <h1>@lang('auth.add_prod')</h1>
         @endisset
         <form method="POST" enctype="multipart/form-data"
               @isset($product)
@@ -26,7 +26,7 @@
                 @endisset
                 @csrf
                 <div class="input-group row">
-                    <label for="code" class="col-sm-2 col-form-label">@lang('auth.code): </label>
+                    <label for="code" class="col-sm-2 col-form-label">@lang('auth.code'): </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error', ['fieldName' => 'code'])
                         <input type="text" class="form-control" name="code" id="code"
@@ -35,7 +35,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="name" class="col-sm-2 col-form-label">@lang('auth.name) RU: </label>
+                    <label for="name" class="col-sm-2 col-form-label">@lang('auth.name') RU: </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error', ['fieldName' => 'name'])
                         <input type="text" class="form-control" name="name" id="name"
@@ -44,7 +44,7 @@
                 </div>
                 <br>
                     <div class="input-group row">
-                        <label for="name" class="col-sm-2 col-form-label">@lang('auth.name) EN: </label>
+                        <label for="name" class="col-sm-2 col-form-label">@lang('auth.name') EN: </label>
                         <div class="col-sm-6">
                             @include('auth.layouts.error', ['fieldName' => 'name_en'])
                             <input type="text" class="form-control" name="name_en" id="name_en"
@@ -53,7 +53,7 @@
                     </div>
                                 <br>
                     <div class="input-group row">
-                        <label for="name" class="col-sm-2 col-form-label">@lang('auth.name) LV: </label>
+                        <label for="name" class="col-sm-2 col-form-label">@lang('auth.name') LV: </label>
                         <div class="col-sm-6">
                             @include('auth.layouts.error', ['fieldName' => 'name_lv'])
                             <input type="text" class="form-control" name="name_lv" id="name_lv"
@@ -62,7 +62,7 @@
                     </div>
                     <br>
                 <div class="input-group row">
-                    <label for="category_id" class="col-sm-2 col-form-label">Category: </label>
+                    <label for="category_id" class="col-sm-2 col-form-label">@lang('auth.category'): </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error', ['fieldName' => 'category_id'])
                         <select name="category_id" id="category_id" class="form-control">
@@ -80,17 +80,17 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="image" class="col-sm-2 col-form-label">Image: </label>
+                    <label for="image" class="col-sm-2 col-form-label">@lang('auth.image'): </label>
                     <div class="col-sm-10">
                         <label class="btn btn-default btn-file">
-                            Upload <input type="file" style="display: none;" name="image" id="image">
+                            @lang('auth.upload') <input type="file" style="display: none;" name="image" id="image">
                         </label>
                     </div>
                 </div>
                 <br>
 
                 <div class="input-group row">
-                    <label for="category_id" class="col-sm-2 col-form-label">Properties: </label>
+                    <label for="category_id" class="col-sm-2 col-form-label">@lang('auth.properties'): </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error', ['fieldName' => 'property_id[]'])
                         <select name="property_id[]" multiple>

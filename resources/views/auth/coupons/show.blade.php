@@ -12,7 +12,7 @@
                     @lang('auth.field')
                 </th>
                 <th>
-                    @lang('auth.value)
+                    @lang('auth.value')
                 </th>
             </tr>
             <tr>
@@ -20,16 +20,16 @@
                 <td>{{ $coupon->id}}</td>
             </tr>
             <tr>
-                <td>@lang('auth.code)</td>
+                <td>@lang('auth.code')</td>
                 <td>{{ $coupon->code }}</td>
             </tr>
             <tr>
-                <td>@lang('auth.descript)</td>
+                <td>@lang('auth.descript')</td>
                 <td>{{ $coupon->description }}</td>
             </tr>
             @isset($coupon->currency)
                 <tr>
-                    <td>@lang('auth.currency)</td>
+                    <td>@lang('auth.currency')</td>
                     <td>{{ $coupon->currency->code }}</td>
                 </tr>
             @endisset

@@ -1,6 +1,6 @@
 @extends('auth.layouts.master')
 
-@section('title', 'Merchant ' . $merchant->name)
+@section('title') @lang('merchant') {{$merchant->name}}@endsection
 
 @section('content')
     <div class="col-md-12">
@@ -9,10 +9,10 @@
             <tbody>
             <tr>
                 <th>
-                    @lang('auth.field)
+                    @lang('auth.field')
                 </th>
                 <th>
-                    @lang('auth.value)
+                    @lang('auth.value')
                 </th>
             </tr>
             <tr>
@@ -20,11 +20,11 @@
                 <td>{{ $merchant->id }}</td>
             </tr>
             <tr>
-                <td>@lang('auth.name)</td>
+                <td>@lang('auth.name')</td>
                 <td>{{ $merchant->name }}</td>
             </tr>
             <tr>
-                <td>Email</td>
+                <td>@lang('auth.email')</td>
                 <td>{{ $merchant->email }}</td>
             </tr>
             </tbody>

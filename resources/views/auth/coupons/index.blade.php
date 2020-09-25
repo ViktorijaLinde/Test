@@ -12,13 +12,13 @@
                     #
                 </th>
                 <th>
-                    @lang('auth.code)
+                    @lang('auth.code')
                 </th>
                 <th>
-                    @lang('auth.descript)
+                    @lang('auth.descript')
                 </th>
                 <th>
-                    Actions
+                    @lang('auth.actions')
                 </th>
             </tr>
             @foreach($coupons as $coupon)
@@ -30,12 +30,12 @@
                         <div class="btn-group" role="group">
                             <form action="{{ route('coupons.destroy', $coupon) }}" method="POST">
                                 <a class="btn btn-success" type="button"
-                                   href="{{ route('coupons.show', $coupon) }}">@lang('auth.open)</a>
+                                   href="{{ route('coupons.show', $coupon) }}">@lang('auth.open')</a>
                                 <a class="btn btn-warning" type="button"
-                                   href="{{ route('coupons.@lang('auth.edit)', $coupon) }}">@lang('auth.edit)</a>
+                                   href="{{ route('coupons.@lang('auth.edit)', $coupon) }}">@lang('auth.edit')</a>
                                 @csrf
                                 @method('DELETE')
-                                <input class="btn btn-danger" type="submit" value="Delete"></form>
+                                <input class="btn btn-danger" type="submit" value="@lang('auth.delete')"></form>
                         </div>
                     </td>
                 </tr>
@@ -43,6 +43,6 @@
             </tbody>
         </table>
         {{ $coupons->links() }}
-        <a class="btn btn-success" type="button" href="{{ route('coupons.create') }}">Add coupon</a>
+        <a class="btn btn-success" type="button" href="{{ route('coupons.create') }}">@lang('auth.add_coup')</a>
     </div>
 @endsection

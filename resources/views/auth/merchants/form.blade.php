@@ -1,7 +1,7 @@
 @extends('auth.layouts.master')
 
 @isset($merchant)
-    @section('title') @lang('auth.edit_merch') {{$merchant->name)}} @endsection
+    @section('title') @lang('auth.edit_merch') {{$merchant->name}} @endsection
 @else
     @section('title') @lang('auth.create_merch') @endsection
 @endisset
@@ -27,7 +27,7 @@
                         @endisset
                         @csrf
                         <div class="input-group row">
-                            <label for="name" class="col-sm-2 col-form-label">@lang('auth.name): </label>
+                            <label for="name" class="col-sm-2 col-form-label">@lang('auth.name') </label>
                             <div class="col-sm-6">
                                 @error('name')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -39,7 +39,7 @@
 
                             <br>
                             <div class="input-group row">
-                                <label for="email" class="col-sm-2 col-form-label">@lang('auth.email'): </label>
+                                <label for="email" class="col-sm-2 col-form-label">@lang('auth.email') </label>
                                 <div class="col-sm-6">
                                     @error('email')
                                     <div class="alert alert-danger">{{ $message }}</div>

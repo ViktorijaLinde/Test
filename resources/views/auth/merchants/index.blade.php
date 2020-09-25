@@ -1,6 +1,6 @@
 @extends('auth.layouts.master')
 
-@section('title') @lang('auth.merchants' @endsection
+@section('title') @lang('auth.merchants') @endsection
 
 @section('content')
     <div class="col-md-12">
@@ -15,7 +15,7 @@
                     #
                 </th>
                 <th>
-                    @lang('auth.name)
+                    @lang('auth.name')
                 </th>
                 <th>
                     @lang('auth.email')
@@ -32,12 +32,12 @@
                     <td>
                         <div class="btn-group" role="group">
                             <form action="{{ route('merchants.destroy', $merchant) }}" method="POST">
-                                <a class="btn btn-success" type="button" href="{{ route('merchants.show', $merchant) }}">@lang('auth.open)</a>
-                                <a class="btn btn-warning" type="button" href="{{ route('merchants.edit', $merchant) }}">@lang('auth.edit)</a>
-                                <a class="btn btn-primary" type="button" href="{{ route('merchants.update_token', $merchant) }}">Update</a>
+                                <a class="btn btn-success" type="button" href="{{ route('merchants.show', $merchant) }}">@lang('auth.open')</a>
+                                <a class="btn btn-warning" type="button" href="{{ route('merchants.edit', $merchant) }}">@lang('auth.edit')</a>
+                                <a class="btn btn-primary" type="button" href="{{ route('merchants.update_token', $merchant) }}">@lang('auth.update')</a>
                                 @csrf
                                 @method('DELETE')
-                                <input class="btn btn-danger" type="submit" value="Delete"></form>
+                                <input class="btn btn-danger" type="submit" value="@lang('auth.delete')"></form>
                         </div>
                     </td>
                 </tr>
@@ -46,6 +46,6 @@
         </table>
         {{ $merchants->links() }}
         <a class="btn btn-success" type="button"
-           href="{{ route('merchants.create') }}">Add merchant</a>
+           href="{{ route('merchants.create') }}">@lang('auth.add_merch')</a>
     </div>
 @endsection

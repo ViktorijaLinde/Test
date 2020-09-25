@@ -1,17 +1,17 @@
 @extends('auth.layouts.master')
 
 @isset($skus)
-    @section('title', 'Sku editing ' . $skus->name)
+    @section('title') @lang('auth.edit_sku') {{$skus->name}}@endsection
 @else
-    @section('title', 'Create Sku')
+    @section('title') @lang('auth.create_sku') @endsection
 @endisset
 
 @section('content')
     <div class="col-md-12">
         @isset($skus)
-            <h1>Edit Sku <b>{{ $skus->name }}</b></h1>
+            <h1>@lang('auth.edit_sku') <b>{{ $skus->name }}</b></h1>
         @else
-            <h1>Add Sku</h1>
+            <h1>@lang('auth.add_sku')</h1>
         @endisset
 
         <form method="POST" enctype="multipart/form-data"
@@ -28,7 +28,7 @@
                 @csrf
 
                     <div class="input-group row">
-                        <label for="price" class="col-sm-2 col-form-label">Price: </label>
+                        <label for="price" class="col-sm-2 col-form-label">@lang('auth.price')</label>
                         <div class="col-sm-2">
                             @include('auth.layouts.error', ['fieldName' => 'price'])
                             <input type="text" class="form-control" name="price"
@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <div class="input-group row">
-                        <label for="count" class="col-sm-2 col-form-label">Quantity: </label>
+                        <label for="count" class="col-sm-2 col-form-label">@lang('auth.quantity') </label>
                         <div class="col-sm-2">
                             @include('auth.layouts.error', ['fieldName' => 'count'])
                             <input type="text" class="form-control" name="count"
@@ -47,7 +47,7 @@
 
                 @foreach ($product->properties as $property)
                     <div class="input-group row">
-                        <label for="property_id[{{ $property->id }}]" class="col-sm-2 col-form-label">{{ $property->name }}: </label>
+                        <label for="property_id[{{ $property->id }}]" class="col-sm-2 col-form-label">{{ $property->name }} </label>
                         <div class="col-sm-6">
                             <select name="property_id[{{ $property->id }}]" class="form-control">
                                 @foreach($property->propertyOptions as $propertyOption)

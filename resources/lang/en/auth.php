@@ -30,24 +30,54 @@ return [
     'edit'=>'Edit',
     'delete'=>'Delete',
     'category'=>'Category',
-    'field'
-    'value'
-    'quantity'
-    'edit_coup'
-    'create_coup'
-    'add_coup'
-    'currency'
-    'no_currency'=>'Without currency'
-    'expired_at'
-    'descript'
-    'is_absolute'
-    'discount'
-    'is_used_once'=>'Ia used only once'
-    'used'=>
-    'edit_merch'
-    'create_merch'
-    'add_merch'
-    
+    'field'=>'Field',
+    'value'=>'Value',
+    'quantity'=>'Quantity',
+    'edit_coup'=>'Edit coupon',
+    'create_coup'=>'Create coupon',
+    'add_coup'=>'Add coupon',
+    'currency'=>'Currency',
+    'no_currency'=>'Without currency',
+    'expired_at'=>'Expired at',
+    'descript'=>'Description',
+    'is_absolute'=>"Is absolute",
+    'discount'=>'Discount',
+    'is_used_once'=>'Is used only once',
+    'used'=>'Used',
+    'edit_merch'=>'Edit merchant',
+    'create_merch'=>'Create merchant',
+    'add_merch'=>'Add merchant',
+    'update'=>'Update',
+    'order'=>'Order',
+    'cust_name'=>'Name of customer',
+    'price'=>'Price',
+    'sum'=>'Sum',
+    'added_coup'=>'Was added coupon',
+    'create_prod'=>'Create product',
+    'edit_prod'=>'Edit product',
+    'add_prod'=>'Add product',
+    'products'=>'Products',
+    'product'=>'Product',
+    'labels'=>'Labels',
+    'new'=>'New',
+    'recommend'=>'Recommend',
+    'hit'=>'Hit',
+    'edit_prop'=>'Edit property',
+    'create_prop'=>'Create property',
+    'add_prop'=>'Add property',
+    'property'=>'Property',
+    'prop_val'=>'Property value',
+    'edit_prop_opt'=>'Edit property option',
+    'add_prop_opt'=>'Add property option',
+    'create_prop_opt'=>'Create property option',
+    'prop_opt'=>'Property option',
+    'option'=>'Option',
+    'edit_sku'=>'Edit sku',
+    'add_sku'=>'Add sku',
+    'create_sku'=>'Create sku',
+    'skus'=>'Skus',
+    'skus_prop'=>'Skus property',
+    'sku'=>'Sku',
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 

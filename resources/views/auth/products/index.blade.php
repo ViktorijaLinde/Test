@@ -1,10 +1,10 @@
 @extends('auth.layouts.master')
 
-@section('title', 'Products')
+@section('title') @lang('auth.products')@endsection
 
 @section('content')
     <div class="col-md-12">
-        <h1>Products</h1>
+        <h1>@lang('auth.products')</h1>
         <table class="table">
             <tbody>
             <tr>
@@ -12,19 +12,19 @@
                     #
                 </th>
                 <th>
-                    @lang('auth.code)
+                    @lang('auth.code')
                 </th>
                 <th>
-                    @lang('auth.name)
+                    @lang('auth.name')
                 </th>
                 <th>
-                    Category
+                    @lang('auth.category')
                 </th>
                 <th>
-                    Quantity
+                    @lang('auth.quantity')
                 </th>
                 <th>
-                    Action
+                    @lang('auth.edit')
                 </th>
             </tr>
             @foreach($products as $product)
@@ -38,14 +38,14 @@
                         <div class="btn-group" role="group">
                             <form action="{{ route('products.destroy', $product) }}" method="POST">
                                 <a class="btn btn-success" type="button"
-                                   href="{{ route('products.show', $product) }}">@lang('auth.open)</a>
+                                   href="{{ route('products.show', $product) }}">@lang('auth.open')</a>
                                 <a class="btn btn-success" type="button"
                                    href="{{ route('skus.index', $product) }}">Skus</a>
                                 <a class="btn btn-warning" type="button"
-                                   href="{{ route('products.edit', $product) }}">@lang('auth.edit)</a>
+                                   href="{{ route('products.edit', $product) }}">@lang('auth.edit')</a>
                                 @csrf
                                 @method('DELETE')
-                                <input class="btn btn-danger" type="submit" value="Delete"></form>
+                                <input class="btn btn-danger" type="submit" value="@lang('auth.delete')"></form>
                         </div>
                     </td>
                 </tr>
@@ -53,6 +53,6 @@
             </tbody>
         </table>
         {{ $products->links() }}
-        <a class="btn btn-success" type="button" href="{{ route('products.create') }}">Add product</a>
+        <a class="btn btn-success" type="button" href="{{ route('products.create') }}">@lang('auth.add_prod')</a>
     </div>
 @endsection

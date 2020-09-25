@@ -1,22 +1,22 @@
 @extends('auth.layouts.master')
 
-@section('title', 'Order ' . $order->id)
+@section('title')@lang('auth.order') {{order->id}} @endsection
 
 @section('content')
     <div class="py-4">
         <div class="container">
             <div class="justify-content-center">
                 <div class="panel">
-                    <h1>Order №{{ $order->id }}</h1>
-                    <p>Customer's name: <b>{{ $order->name }}</b></p>
-                    <p>Number: <b>{{ $order->phone }}</b></p>
+                    <h1>@lang('auth.order') №{{ $order->id }}</h1>
+                    <p>@lang('auth.cust_name') <b>{{ $order->name }}</b></p>
+                    <p>@lang('auth.number') <b>{{ $order->phone }}</b></p>
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th>@lang('auth.name)</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
-                            <th>Total</th>
+                            <th>@lang('auth.name')</th>
+                            <th>@lang('auth.quantity')</th>
+                            <th>@lang('auth.price')</th>
+                            <th>@lang('auth.total')</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -35,12 +35,12 @@
                             </tr>
                         @endforeach
                         <tr>
-                            <td colspan="3">Sum:</td>
+                            <td colspan="3">@lang('auth.sum')</td>
                             <td>{{ $order->sum }}€</td>
                         </tr>
                         @if($order->hasCoupon())
                             <tr>
-                                <td colspan="3">Was added coupon:</td>
+                                <td colspan="3">@lang('auth.added_coup')</td>
                                 <td><a href="{{ route('coupons.show', $order->coupon) }}">{{ $order->coupon->code }}</a></td>
                             </tr>
                         @endif

@@ -1,17 +1,17 @@
 @extends('auth.layouts.master')
 
 @isset($propertyOption)
-    @section('title', 'Property option editing ' . $propertyOption->name)
+    @section('title') @lang('auth.edit_prop_opt') {{$propertyOption->name_en}} @endsection
 @else
-    @section('title', 'Create property option')
+    @section('title') @lang('auth.create_prop_opt') @endsection
 @endisset
 
 @section('content')
     <div class="col-md-12">
         @isset($propertyOption)
-            <h1>Edit property option <b>{{ $propertyOption->name_en }}</b></h1>
+            <h1>@lang('auth.edit_prop_opt') <b>{{ $propertyOption->name_en }}</b></h1>
                 @else
-                    <h1>Add property option</h1>
+                    <h1>@lang('auth.add_prop_opt')</h1>
                 @endisset
 
                 <form method="POST" enctype="multipart/form-data"
@@ -27,10 +27,10 @@
                         @endisset
                         @csrf
                             <div>
-                                <h2>Property {{ $property->name }}</h2>
+                                <h2>@lang('auth.property') {{ $property->name }}</h2>
                             </div>
                         <div class="input-group row">
-                            <label for="name" class="col-sm-2 col-form-label">@lang('auth.name) RU: </label>
+                            <label for="name" class="col-sm-2 col-form-label">@lang('auth.name') RU: </label>
                             <div class="col-sm-6">
                                 @error('name')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -42,7 +42,7 @@
 
                             <br>
                             <div class="input-group row">
-                                <label for="name" class="col-sm-2 col-form-label">@lang('auth.name) EN: </label>
+                                <label for="name" class="col-sm-2 col-form-label">@lang('auth.name') EN: </label>
                                 <div class="col-sm-6">
                                     @error('name_en')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -53,7 +53,7 @@
                             </div>
                             <br>
                             <div class="input-group row">
-                                <label for="name" class="col-sm-2 col-form-label">@lang('auth.name) LV: </label>
+                                <label for="name" class="col-sm-2 col-form-label">@lang('auth.name') LV: </label>
                                 <div class="col-sm-6">
                                     @error('name_lv')
                                     <div class="alert alert-danger">{{ $message }}</div>

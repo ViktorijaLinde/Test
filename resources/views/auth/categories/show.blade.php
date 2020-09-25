@@ -21,7 +21,7 @@
                 <td>{{ $category->id }}</td>
             </tr>
             <tr>
-                <td>@lang('auth.code)</td>
+                <td>@lang('auth.code')</td>
                 <td>{{ $category->code }}</td>
             </tr>
             <tr>
