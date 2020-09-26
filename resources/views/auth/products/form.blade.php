@@ -125,7 +125,7 @@
                     </div>
                     <br>
                 @endforeach
-                <button class="btn btn-success">@lang('main.save')</button>
+                <button class="btn btn-success">@lang('auth.save')</button>
             </div>
         </form>
     </div>

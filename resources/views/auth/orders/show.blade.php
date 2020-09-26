@@ -20,6 +20,7 @@
                         </tr>
                         </thead>
                         <tbody>
+                            
                         @foreach ($skus ?? '' as $sku)
                             <tr>
                                 <td>
@@ -34,6 +35,7 @@
                                 <td>{{ $sku->pivot->price * $sku->pivot->count }} </td>
                             </tr>
                         @endforeach
+                        }
                         <tr>
                             <td colspan="3">@lang('auth.sum')</td>
                             <td>{{ $order->sum }}€</td>

@@ -39,7 +39,7 @@
                     </div>
                     <br>
                     @csrf
-                    <input type="submit" class="btn btn-success" value="@lang('basket.approve_order')">
+                    <input type="submit" class="btn btn-success" href="{{ route('basket-confirm') }}" value="@lang('basket.approve_order')">
                 </div>
             </form>
         </div>

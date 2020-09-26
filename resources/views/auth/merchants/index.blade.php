@@ -34,7 +34,6 @@
                             <form action="{{ route('merchants.destroy', $merchant) }}" method="POST">
                                 <a class="btn btn-success" type="button" href="{{ route('merchants.show', $merchant) }}">@lang('auth.open')</a>
                                 <a class="btn btn-warning" type="button" href="{{ route('merchants.edit', $merchant) }}">@lang('auth.edit')</a>
-                                <a class="btn btn-primary" type="button" href="{{ route('merchants.update_token', $merchant) }}">@lang('auth.update')</a>
                                 @csrf
                                 @method('DELETE')
                                 <input class="btn btn-danger" type="submit" value="@lang('auth.delete')"></form>
