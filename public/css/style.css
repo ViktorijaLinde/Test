@@ -46,17 +46,18 @@ div.filters {
     padding-bottom: 5px;
 }
 
+
 footer {
     padding-top: 50px;
     padding-bottom: 50px;
-    color: #99979c;
-    background-color: #2a2730;
+    color: #2012AF;
+    background-color: #5D7AD6;
 }
 div.input-group select.form-control {
 	height: 32px !important;
 }
 .dropbtn {
-  background-color: #4CAF50;
+  background-color: transparent;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -87,4 +88,4 @@ div.input-group select.form-control {
 
 .dropdown:hover .dropdown-content {display: block;}
 
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {background-color: 242323;}

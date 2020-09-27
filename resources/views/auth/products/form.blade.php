@@ -73,7 +73,7 @@
                                         selected
                                     @endif
                                     @endisset
-                                >{{ $category->name }}</option>
+                                >{{ $category->name_en }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -101,7 +101,7 @@
                                         selected
                                     @endif
                                     @endisset
-                                >{{ $property->name }}</option>
+                                >{{ $property->name_en }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -109,9 +109,9 @@
                 <br>
 
                 @foreach ([
-                'hit' => 'Хит',
-                'new' => 'Новинка',
-                'recommend' => 'Рекомендуемые'
+                'hit' => 'Hit',
+                'new' => 'New',
+                'recommend' => 'Recommend'
                 ] as $field => $title)
                     <div class="form-group row">
                         <label for="code" class="col-sm-2 col-form-label">{{ $title }}: </label>

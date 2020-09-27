@@ -26,6 +26,7 @@ class BasketController extends Controller
             return redirect()->route('basket');
         }
         $email = Auth::check() ? Auth::user()->email : $request->email;
+        $basket->saveOrder($request->name, $request->phone, $email);
             session()->flash('success', __('basket.you_order_confirmed'));
         
 

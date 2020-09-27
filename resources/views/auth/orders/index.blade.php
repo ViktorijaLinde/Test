@@ -33,6 +33,16 @@
                     <td>{{ $order->phone }}</td>
                     <td>{{ $order->created_at->format('H:i d/m/Y') }}</td>
                     <td>{{ $order->sum }} €</td>
+                     <td>
+                        <div class="btn-group" role="group">
+                            <a class="btn btn-success" type="button"
+                               @admin
+                               href="{{ route('orders.show', $order) }}"
+                               
+                                @endadmin
+                            >@lang('auth.open')</a>
+                        </div>
+                    </td>
                    
                 </tr>
             @endforeach

@@ -21,9 +21,6 @@
                     @lang('auth.category')
                 </th>
                 <th>
-                    @lang('auth.quantity')
-                </th>
-                <th>
                     @lang('auth.edit')
                 </th>
             </tr>
@@ -33,14 +30,11 @@
                     <td>{{ $product->code }}</td>
                     <td>{{ $product->name_en }}</td>
                     <td>{{ $product->category->name_en }}</td>
-                    <td></td>
                     <td>
                         <div class="btn-group" role="group">
                             <form action="{{ route('products.destroy', $product) }}" method="POST">
                                 <a class="btn btn-success" type="button"
                                    href="{{ route('products.show', $product) }}">@lang('auth.open')</a>
-                                <a class="btn btn-success" type="button"
-                                   href="{{ route('skus.index', $product) }}">Skus</a>
                                 <a class="btn btn-warning" type="button"
                                    href="{{ route('products.edit', $product) }}">@lang('auth.edit')</a>
                                 @csrf

@@ -33,7 +33,7 @@
                     @admin
                     <li><a href="{{ route('categories.index') }}">@lang('auth.categories')</a></li>
                     <li><a href="{{ route('products.index') }}">@lang('auth.prices')</a></li>
-                    <li><a href="{{ route('properties.index') }}">@lang('auth.properties')</a></li>
+                    
                     <li><a href="{{ route('coupons.index') }}">@lang('auth.coupons')</a></li>
                     <li><a href="{{ route('merchants.index') }}">@lang('auth.merchants')</a>
                     </li>

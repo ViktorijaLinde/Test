@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\DB;
 class CouponSeeder extends Seeder
 {
     /**
@@ -12,7 +12,7 @@ class CouponSeeder extends Seeder
     public function run()
     {
         DB::table('coupons')->insert([
-            'code' => '12345',
+            'code' => '123455',
             'value' => '50',
 
         ]);

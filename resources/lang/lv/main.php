@@ -12,7 +12,7 @@ return [
     'lang'=>'Valoda',
     'properties' => [
         'hit' => 'Hits',
-        'recommend' => 'Rekommendējam',
+        'recommend' => 'Rekomendējam',
         'new' => 'Jaunums',
     ],
     'filter' => 'Filtrs',

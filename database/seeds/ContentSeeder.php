@@ -96,7 +96,7 @@ class ContentSeeder extends Seeder
                 'name_en' => 'Mobile phones',
                 'name_lv' => 'Mobīlie telefoni',
                 'code' => 'mobiles',
-                'image' => 'categories/mobile.jpg',
+                'image' => 'categories/mobile.jpeg',
                 'products' => [
                     [
                         'name' => 'iPhone X',
